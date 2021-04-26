@@ -17,17 +17,18 @@ class MainActivity : AppCompatActivity() {
         val button3: Button = findViewById(R.id.button3);
         var resultadoConvertir: TextView = findViewById(R.id.resultadoConvertir)
 
-        var ingresoPalindromo: EditText = findViewById(R.id.ingresoPalindromo);
+        val ingresoPalindromo: EditText = findViewById(R.id.ingresoPalindromo);
         val verificar: Button = findViewById(R.id.verificar);
-        var resultadoPalindromo: TextView = findViewById(R.id.resultadoPalindromo);
-
+        val resultadoPalindromo: TextView = findViewById(R.id.resultadoPalindromo);
 
 
        verificar.setOnClickListener(View.OnClickListener {
-           var ing = ingresoPalindromo.toString();
-           var dadoVuelta = ing.reversed();
+           val ing = ingresoPalindromo.text.toString();
+           val dadoVuelta = ing.reversed();
 
-           if(ing == dadoVuelta){
+           var esUnPalindromo =  dadoVuelta.equals(ing)
+
+           if(esUnPalindromo){
                resultadoPalindromo.text = "Es un palindromo :)";
            }
            else{
